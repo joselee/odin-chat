@@ -1,0 +1,20 @@
+# Build output
+bin/
+obj/
+dist/
+refs/
+
+# IDE files
+.vs/
+.idea/
+*.user
+*.suo
+
+# Local/real configs (never commit API keys)
+config/*.cfg
+!config/OdinChat.cfg.example
+
+# Local game/BepInEx files
+*.dll
+*.pdb
+*.zip

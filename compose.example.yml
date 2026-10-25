@@ -1,0 +1,20 @@
+services:
+  valheim:
+    image: ghcr.io/lloesche/valheim-server:latest
+    container_name: valheim
+    restart: unless-stopped
+
+    ports:
+      - "2456-2458:2456-2458/udp"
+
+    environment:
+      SERVER_NAME: "jupiter"
+      WORLD_NAME: "cloudberry.sh"
+      SERVER_PASS: "change-me"
+      SERVER_PUBLIC: "0"
+      UPDATE_ON_STARTUP: "1"
+      BEPINEX: "true"
+      TZ: "Europe/Helsinki"
+
+    volumes:
+      - ./config:/config

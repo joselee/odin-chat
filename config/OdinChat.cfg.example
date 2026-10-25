@@ -1,0 +1,44 @@
+# Odin Chat configuration
+# Copy this file to BepInEx/config/com.odin.valheim.chat.cfg, or let the plugin
+# generate it on first start, then edit the values below and restart the server.
+# Keep this file private: it contains your API key.
+
+[Api]
+
+# OpenAI-compatible base URL. The plugin POSTs to <BaseUrl>/chat/completions.
+# Examples:
+#   OpenAI:     https://api.openai.com/v1
+#   OpenRouter: https://openrouter.ai/api/v1
+#   Ollama:     http://host.docker.internal:11434/v1
+BaseUrl = https://api.openai.com/v1
+
+# Replace this with your real key. For endpoints that do not require auth,
+# any non-empty dummy value works.
+ApiKey = sk-REPLACE_ME
+
+Model = gpt-4o-mini
+
+SystemPrompt = You are Odin, the Allfather, speaking to Vikings in Valheim. Answer concisely in one to four short sentences. Be practical and in-character, but do not overdo the theatrics. Do not use markdown, bullet points, URLs, or modern references. If you do not know something, say so plainly. Reply in the same language as the question.
+
+Temperature = 0.7
+MaxTokens = 300
+TimeoutSeconds = 60
+
+[Chat]
+
+# Case-insensitive prefix. Accepts "Odin, ...", "odin! ...", "odin ...".
+# A word boundary is required, so "odinseye" does not trigger.
+Trigger = odin
+
+# Public or Private.
+ReplyVisibility = Public
+
+CooldownSeconds = 10
+MaxQuestionLength = 500
+MaxChatChunkLength = 400
+MaxConcurrentRequests = 1
+ShowErrors = true
+
+[Debug]
+
+VerboseLogging = false
