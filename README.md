@@ -289,6 +289,21 @@ The project targets .NET Framework 4.7.2 and references:
 
 These references are not copied into the output; the server provides them.
 
+To build a release zip for GitHub Releases:
+
+```bash
+./scripts/package.sh
+```
+
+The archive is written to `release/OdinChat-<version>.zip` and contains the
+DLL, the example config, and the documentation.
+
+## Verification
+
+See [TESTING.md](TESTING.md) for an in-game checklist covering the fake-player
+lifecycle, clock, player history, loot scaling, private replies, and API
+failures.
+
 ## Credits
 
 The fake-player/chat-relay approach was informed by
